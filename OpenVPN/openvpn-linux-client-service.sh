@@ -10,10 +10,12 @@ apt-get install -y --no-install-recommended openvpn
 
 #Cria arquivo de Configuração
 mv ./client.conf /etc/openvpn/client.conf
+mv ./pass /etc/openvpn/pass
+chmod 400 /etc/openvpn/pass
 
-#Cria Serviço
-systemctl enable openvpn@client.service
+#Habilita Servico
+echo "AUTOSTART=\"all\"" > /etc/default/openvpn
 
 #Inicia Servico
-service openvpn@client start
+service openvpn start
 
