@@ -14,8 +14,7 @@ mv ./pass /etc/openvpn/pass
 chmod 400 /etc/openvpn/pass
 
 #Habilita Servico
-echo "AUTOSTART=\"all\"" > /etc/default/openvpn
+sudo sed 's/#AUTOSTART="all"/AUTOSTART="all"/g' /etc/default/openvpn
 
 #Inicia Servico
 service openvpn start
-
