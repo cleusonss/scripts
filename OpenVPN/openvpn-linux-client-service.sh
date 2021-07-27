@@ -5,8 +5,8 @@
 
 #Instala OpenVPN
 debian_interactive=false
-apt-get update
-apt-get install --no-install-recommends openvpn
+apt-get -y update
+apt-get -y install --no-install-recommends openvpn
 
 #Cria arquivo de Configuração
 mv ./client.conf /etc/openvpn/client.conf
